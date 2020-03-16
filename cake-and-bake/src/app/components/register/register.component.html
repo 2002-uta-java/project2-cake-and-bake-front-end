@@ -1,28 +1,40 @@
 <div class="wrapper">
-    <form class="card">
-        <div class="heading">
-            <h1>Cake&Bake</h1>
-            <h5>Register</h5>
-        </div>
-        <div class="form-group">
-            <input type="text" class="form-control" placeholder="First Name">
-        </div>
-        <div class="form-group">
-            <input type="text" class="form-control" placeholder="Last Name">
-        </div>
-        <div class="form-group">
-            <input type="email" class="form-control" placeholder="Email">
-        </div>
-        <div class="form-group">
-            <input type="text" class="form-control" placeholder="Username">
-        </div>
-        <div class="form-group">
-            <input type="password" class="form-control" placeholder="Password">
-        </div>
-        <div class="form-group">
-            <input type="password" class="form-control" placeholder="Confirm Password">
-        </div>
-        <button type="submit" class="btn btn-success">Submit</button>
-        <a [routerLink]="['/login']">Log In</a>
-    </form>
+    <div class="row">
+        <form class="card">
+            <header class="heading">
+                <h1>Cake&Bake</h1>
+                <h5>Register</h5>
+            </header>
+
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="first_name" type="text" class="validate">
+                    <label for="first_name">First Name</label>
+                </div>
+                <div class="input-field col s12">
+                    <input id="last_name" type="text" class="validate">
+                    <label for="last_name">Last Name</label>
+                </div>
+                <div class="input-field col s12">
+                    <input id="email" type="email" class="validate">
+                    <label for="email">Email</label>
+                </div>
+                <div class="input-field col s12">
+                    <input id="username" type="text" class="validate">
+                    <label for="username">Username</label>
+                </div>
+                <div class="input-field col s12">
+                    <input id="password" type="password" class="validate">
+                    <label for="password">Password</label>
+                </div>
+                <div class="input-field col s12">
+                    <input id="confirm_password" type="password" class="validate">
+                    <label for="confirm_password">Confirm Password</label>
+                </div>
+            </div>
+            <button class="btn waves-effect waves-light light-green" type="submit">Submit</button>
+
+            <a [routerLink]="['/login']">Log In</a>
+        </form>
+    </div>
 </div>

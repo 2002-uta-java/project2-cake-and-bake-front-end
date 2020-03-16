@@ -12,7 +12,7 @@ form {
     flex-direction: column;
     justify-content: space-evenly;
     padding: 20px;
-    width: 20vw;
+    width: 25vw;
     background-color: rgb(255, 255, 255, .6);
     box-shadow: 5px 5px 10px grey;
 }
@@ -31,4 +31,8 @@ button {
 a {
     text-align: center;
     color: grey;
+}
+
+.input-field {
+    margin: 5px !important;
 }
