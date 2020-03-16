@@ -1,22 +1,19 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Cake&Bake</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarText">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-            <a class="nav-link" href="#">Recipes <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" href="#">Categories</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
-            </li>
+<ul id="dropdown1" class="dropdown-content">
+    <li><a href="#!">one</a></li>
+    <li><a href="#!">two</a></li>
+    <li class="divider"></li>
+    <li><a href="#!">three</a></li>
+</ul>
+<nav>
+    <div class="nav-wrapper grey lighten-5">
+        <!-- <a href="#" class="brand-logo right">Logo</a> -->
+        <ul id="nav-mobile" class="left hide-on-med-and-down">
+            <li><a href="#" class="logo">Cake&Bake</a></li>
+            <li><a href="sass.html">Recipes</a></li>
+            <li><a href="badges.html">Categories</a></li>
         </ul>
-        <span class="navbar-text">
-            Navbar text with an inline element
-        </span>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
+        </ul>
     </div>
 </nav>
