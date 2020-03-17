@@ -1,6 +1,6 @@
 <div class="wrapper">
     <div class="row">
-        <form class="card">
+        <form class="card" (submit)="onSubmit">
             <header class="heading">
                 <h1>Cake&Bake</h1>
                 <h5>Register</h5>
@@ -8,32 +8,31 @@
 
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="first_name" type="text" class="validate">
+                    <input id="first_name" name="first_name" [(ngModel)]="newUser.first_name" required minlength="2" maxlength="20" type="text" class="validate">
                     <label for="first_name">First Name</label>
                 </div>
                 <div class="input-field col s12">
-                    <input id="last_name" type="text" class="validate">
+                    <input id="last_name" name="last_name" [(ngModel)]="newUser.last_name" required minlength="2" maxlength="20" type="text" class="validate">
                     <label for="last_name">Last Name</label>
                 </div>
                 <div class="input-field col s12">
-                    <input id="email" type="email" class="validate">
+                    <input id="email" name="email" [(ngModel)]="newUser.email" type="email" class="validate">
                     <label for="email">Email</label>
                 </div>
                 <div class="input-field col s12">
-                    <input id="username" type="text" class="validate">
+                    <input id="username" name="username" [(ngModel)]="newUser.username" required minlength="4" maxlength="20" type="text" class="validate">
                     <label for="username">Username</label>
                 </div>
                 <div class="input-field col s12">
-                    <input id="password" type="password" class="validate">
+                    <input id="password" name="password" [(ngModel)]="newUser.password" required minlength="6" maxlength="20" type="password" class="validate">
                     <label for="password">Password</label>
                 </div>
                 <div class="input-field col s12">
-                    <input id="confirm_password" type="password" class="validate">
+                    <input id="confirm_password" name="confirm_password" [(ngModel)]="newUser.confirm_password" type="password" class="validate">
                     <label for="confirm_password">Confirm Password</label>
                 </div>
             </div>
             <button class="btn waves-effect waves-light light-green" type="submit">Submit</button>
-
             <a [routerLink]="['/login']">Log In</a>
         </form>
     </div>
