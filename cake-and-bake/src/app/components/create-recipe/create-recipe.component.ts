@@ -31,6 +31,11 @@ export class CreateRecipeComponent implements OnInit {
       stepNo: this.stepnum,
       inst: ""
     }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('select');
+      var instances = M.FormSelect.init(elems, options);
+    });
   }
 
   // onSubmit(){
