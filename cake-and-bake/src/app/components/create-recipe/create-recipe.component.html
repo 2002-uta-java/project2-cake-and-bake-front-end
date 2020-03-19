@@ -1,0 +1,85 @@
+<div class="wrapper">
+    <h1>Create a new recipe</h1>
+    <div class="row">
+        <!-- <form (submit)="createRecipe">
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="name" name="name" [(ngModel)]="newRecipe.name" required type="text" class="validate">
+                    <label for="name">Name</label>
+                </div>
+                <div class="input-field col s12">
+                    <textarea id="description" [(ngModel)]="newRecipe.description" class="materialize-textarea"></textarea>
+                    <label for="description">Description</label>
+                </div>
+            </div>
+            <button class="btn waves-effect waves-light light-green" type="submit">Submit</button>
+        </form>
+        <form (submit)="createIngredient()">
+            <div id="myDIV" class="header">
+                <h2>Ingredients</h2>
+                <input type="text" id="ingredient-name" [(ngModel)]="newIngredient.name" name="name" placeholder="Ingredient Name">
+                <input type="number"step="0.01" id="ingredient-amount" [(ngModel)]="newIngredient.amount"  name="amount" placeholder="Amount">
+                <input type="text" id="measurement" [(ngModel)]="newIngredient.measurement" name="measurement" placeholder="Unit of measurement">
+                <button class="btn waves-effect waves-light light-green">Add new ingredient</button>
+            </div>
+        </form>
+        <form>
+            <div id="myDIV" class="header">
+                <h2>Steps</h2>
+                <input type="text" id="step-name" [(ngModel)]="newStep.inst" placeholder="Step instruction">
+                <span onclick="createStep()" class="btn waves-effect waves-light light-green">Add new step</span>
+            </div>
+        </form> -->
+
+        <form (submit)="onSubmit">
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="ingr-name" [(ngModel)]="newIngredient.name" name="ingr-name" maxlength="25" type="text" class="validate">
+                    <label for="ingr-name">Ingredient</label>
+                </div>
+                <div class="input-field col s12">
+                    <input id="ingr-amount" [(ngModel)]="newIngredient.amount" name="ingr-amount" maxlength="20" type="number" class="validate">
+                    <label for="ingr-amount">Amount</label>
+                </div>
+                <div class="input-field col s12">
+                    <input id="measurement" [(ngModel)]="newIngredient.measurement" name="measurement" type="text" class="validate">
+                    <label for="measurement">Unit of Measurement</label>
+                </div>
+
+                <!-- trying to add dropdown list to replace text input -->
+                <div class="select-field col s12">
+                    <select id="measure" [(ngModel)]="newIngredient.measurement" name="measure" class="validate">
+                        <option value="tbsp">tablespoon</option>
+                        <option value="tsp">teaspoon</option>
+                        <option value="floz">fluid ounce</option>
+                        <option value="c">cup</option>
+                        <option value="pt">pint</option>
+                        <option value="qt">quart</option>
+                        <option value="gal">gallon</option>
+                        <option value="oz">ounce</option>
+                        <option value="lb">pound</option>
+                    </select>
+                    <label for="measurement">Unit of Measurement</label>
+                </div>
+            </div>
+            <button class="btn waves-effect waves-light light-green" type="submit">Submit</button>
+        </form>
+
+        <form>
+            <div id="myDIV" class="header">
+                <h2>Steps</h2>
+                <input type="text" id="step-name" [(ngModel)]="newStep.inst" name="step-name" placeholder="Step instruction">
+                <span onclick="createStep()" class="btn waves-effect waves-light light-green">Add new step</span>
+            </div>
+        </form>
+
+        <ol id="myUL">
+            <li>Hit the gym</li>
+            <li class="checked">Pay bills</li>
+            <li>Meet George</li>
+            <li>Buy eggs</li>
+            <li>Read a book</li>
+            <li>Organize office</li>
+        </ol>
+    </div>
+</div>

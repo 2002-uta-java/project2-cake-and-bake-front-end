@@ -5,7 +5,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { MainComponent } from './components/main/main.component';
 import { RecipeComponent } from './components/recipe/recipe.component';
-import { CreateRecipeComponent } from './create-recipe/create-recipe.component';
+import { CreateRecipeComponent } from './components/create-recipe/create-recipe.component';
 
 
 const routes: Routes = [{
