@@ -31,7 +31,7 @@
             </div>
         </form> -->
 
-        <form (submit)="onSubmit">
+        <form id="ingredient-form" (submit)="onSubmit">
             <div class="row">
                 <div class="input-field col s12">
                     <input id="ingr-name" [(ngModel)]="newIngredient.name" name="ingr-name" maxlength="25" type="text" class="validate">
@@ -41,14 +41,15 @@
                     <input id="ingr-amount" [(ngModel)]="newIngredient.amount" name="ingr-amount" maxlength="20" type="number" class="validate">
                     <label for="ingr-amount">Amount</label>
                 </div>
-                <div class="input-field col s12">
+                <!-- <div class="input-field col s12">
                     <input id="measurement" [(ngModel)]="newIngredient.measurement" name="measurement" type="text" class="validate">
                     <label for="measurement">Unit of Measurement</label>
-                </div>
+                </div> -->
 
                 <!-- trying to add dropdown list to replace text input -->
                 <div class="select-field col s12">
                     <select id="measure" [(ngModel)]="newIngredient.measurement" name="measure" class="validate">
+                        <option value="" disabled selected>Unit</option>
                         <option value="tbsp">tablespoon</option>
                         <option value="tsp">teaspoon</option>
                         <option value="floz">fluid ounce</option>
