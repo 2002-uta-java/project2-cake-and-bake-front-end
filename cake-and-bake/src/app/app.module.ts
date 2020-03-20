@@ -12,6 +12,11 @@ import { MainComponent } from './components/main/main.component';
 import { RecipeComponent } from './components/recipe/recipe.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CreateRecipeComponent } from './components/create-recipe/create-recipe.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatAutocompleteModule, MatButtonModule, MatCheckboxModule, MatDatepickerModule, 
+  MatFormFieldModule, MatInputModule, MatRadioModule, MatSelectModule, MatSliderModule, 
+  MatSlideToggleModule, MatListModule, MatToolbarModule, MatIconModule} from '@angular/material';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 @NgModule({
   declarations: [
@@ -28,7 +33,23 @@ import { CreateRecipeComponent } from './components/create-recipe/create-recipe.
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatAutocompleteModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatDatepickerModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatRadioModule,
+    MatSelectModule,
+    MatSliderModule,
+    MatSlideToggleModule,
+    MatListModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

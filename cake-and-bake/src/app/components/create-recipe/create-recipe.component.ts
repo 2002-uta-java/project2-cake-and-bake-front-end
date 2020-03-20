@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RecipeService } from 'src/app/recipe.service';
 
 @Component({
   selector: 'app-create-recipe',
@@ -13,7 +14,7 @@ export class CreateRecipeComponent implements OnInit {
   
   stepnum: number = 1;
 
-  constructor() { }
+  constructor(private recipeService: RecipeService) { }
 
   ngOnInit() {
     this.newRecipe = {
@@ -31,34 +32,13 @@ export class CreateRecipeComponent implements OnInit {
       stepNo: this.stepnum,
       inst: ""
     }
-
-    document.addEventListener('DOMContentLoaded', function() {
-      var elems = document.querySelectorAll('select');
-      var instances = M.FormSelect.init(elems, options);
-    });
   }
 
-  // onSubmit(){
-  //   this.newRecipe = {
-  //     name: "",
-  //     description: "",
-  //     ingredients: [],
-  //     steps: []
-  //   }
-  //   this.newIngredient = {
-  //     name: "",
-  //     amount: 0,
-  //     measurement: ""
-  //   }
-  //   this.newStep = {
-  //     stepNo: this.stepnum,
-  //     inst: ""
-  //   }
-  // }
-
-  createRecipe(recipe){
-    
-
+  createRecipeFromService(newRecipe){
+    let observable = this.recipeService.createRecipe(newRecipe)
+    observable.subscribe(recipe => {
+      this.newRecipe = recipe
+    })
     // reset newRecipe fields
     this.newRecipe = {
       name: "",
@@ -69,14 +49,11 @@ export class CreateRecipeComponent implements OnInit {
   }
 
   createIngredient(){
-    this.newIngredient = {
-      name: "",
-      amount: 0,
-      measurement: ""
-    }
+    
   }
 
   createStep(){
+
     this.newStep = {
       stepNo: this.stepnum,
       inst: ""
