@@ -20,8 +20,8 @@ export class CreateRecipeComponent implements OnInit {
     this.newRecipe = {
       name: "",
       description: "",
-      ingredients: [],
-      steps: []
+      ingredients: [this.newIngredient],
+      steps: [this.newStep]
     }
     this.newIngredient = {
       name: "",
@@ -48,18 +48,21 @@ export class CreateRecipeComponent implements OnInit {
     }
   }
 
-  createIngredient(){
+  createIngredient(newIngredient){
+    console.log("creating ingredient")
+    this.newIngredient = newIngredient
+    console.log(this.newIngredient)
+    console.log(this.newRecipe.ingredients.push(newIngredient))
     
   }
 
-  createStep(){
-
+  createStep(newStep){
     this.newStep = {
       stepNo: this.stepnum,
-      inst: ""
+      inst: newStep.inst
     }
-    this.stepnum++;
     console.log(this.stepnum);
+    this.stepnum++;
   }
 
 }
