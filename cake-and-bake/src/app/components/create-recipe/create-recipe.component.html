@@ -1,7 +1,7 @@
 <div class="wrapper">
     <h1>Create a new recipe</h1>
     <div class="row">
-        <form class="example-form" (submit)="createRecipe()">
+        <form class="example-form" (submit)="createRecipeFromService()">
             <p>{{ newRecipe | json }}</p>
             <mat-form-field class="example-full-width">
                 <mat-label>Name</mat-label>
@@ -9,7 +9,7 @@
             </mat-form-field>
             <mat-form-field class="example-full-width">
                 <mat-label>Desciption</mat-label>
-                <textarea matInput [(ngModel)]="newRecipe.description" name="description" placeholder="Ex. Dice the tomatoes..."></textarea>
+                <textarea matInput [(ngModel)]="newRecipe.description" name="description" placeholder="Ex. Savory chicken dish served with rice..."></textarea>
             </mat-form-field>
             <br>
             <button mat-raised-button>Add recipe</button>
@@ -22,7 +22,7 @@
             </mat-form-field>
             <mat-form-field class="example-full-width">
                 <mat-label>Amount</mat-label>
-                <input matInput [(ngModel)]="newIngredient.amount" name="ingr-amount" placeholder="Ex. Pizza">
+                <input matInput [(ngModel)]="newIngredient.amount" name="ingr-amount" type="number" step="0.01">
             </mat-form-field>
             <mat-form-field>
                 <mat-label>Unit of measurement</mat-label>
@@ -41,8 +41,8 @@
             </mat-form-field>
             <br>
             <button mat-raised-button>Add ingredient</button>
-            <p>{{ newIngredient | json }}</p>
         </form>
+        <table mat-table id="ingredientsTable"  class="mat-elevation-z8"></table>
 
         <form class="example-form" (submit)="createStep(newStep)">
             <mat-form-field class="example-full-width">
@@ -52,17 +52,7 @@
             <br>
             <button mat-raised-button>Add step</button>
         </form>
-
-
-
-        <ol id="myUL">
-            <li>Hit the gym</li>
-            <li class="checked">Pay bills</li>
-            <li>Meet George</li>
-            <li>Buy eggs</li>
-            <li>Read a book</li>
-            <li>Organize office</li>
-        </ol>
+        <table mat-table id="stepsTable"  class="mat-elevation-z8"></table>
     </div>
 
 

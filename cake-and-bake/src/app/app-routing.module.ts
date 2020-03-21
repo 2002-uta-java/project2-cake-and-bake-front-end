@@ -6,6 +6,7 @@ import { HomeComponent } from './components/home/home.component';
 import { MainComponent } from './components/main/main.component';
 import { RecipeComponent } from './components/recipe/recipe.component';
 import { CreateRecipeComponent } from './components/create-recipe/create-recipe.component';
+import { AllRecipesComponent } from './components/all-recipes/all-recipes.component';
 
 
 const routes: Routes = [{
@@ -14,6 +15,9 @@ const routes: Routes = [{
   children: [{
     path: '',
     component: HomeComponent
+  },{
+    path: 'recipes',
+    component: AllRecipesComponent
   },{
     path: 'recipe/id',
     component: RecipeComponent

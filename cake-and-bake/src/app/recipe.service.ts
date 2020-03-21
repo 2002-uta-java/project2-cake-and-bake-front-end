@@ -9,6 +9,7 @@ export class RecipeService {
   constructor(private http: HttpClient) { }
 
   createRecipe(newRecipe){
+    console.log("service: " + newRecipe)
     return this.http.post('/recipe', newRecipe);
   }
 

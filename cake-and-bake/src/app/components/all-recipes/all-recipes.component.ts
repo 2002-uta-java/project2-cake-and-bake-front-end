@@ -2,13 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-recipe',
-  templateUrl: './recipe.component.html',
-  styleUrls: ['./recipe.component.css']
+  selector: 'app-all-recipes',
+  templateUrl: './all-recipes.component.html',
+  styleUrls: ['./all-recipes.component.css']
 })
-export class RecipeComponent implements OnInit {
+export class AllRecipesComponent implements OnInit {
 
   response: any;
+
   constructor(private http: HttpClient) { }
 
   ngOnInit() {

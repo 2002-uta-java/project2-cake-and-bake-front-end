@@ -17,6 +17,7 @@ import { MatAutocompleteModule, MatButtonModule, MatCheckboxModule, MatDatepicke
   MatFormFieldModule, MatInputModule, MatRadioModule, MatSelectModule, MatSliderModule, 
   MatSlideToggleModule, MatListModule, MatToolbarModule, MatIconModule} from '@angular/material';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import { AllRecipesComponent } from './components/all-recipes/all-recipes.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     HomeComponent,
     MainComponent,
     RecipeComponent,
-    CreateRecipeComponent
+    CreateRecipeComponent,
+    AllRecipesComponent
   ],
   imports: [
     BrowserModule,

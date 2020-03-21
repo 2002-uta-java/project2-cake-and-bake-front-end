@@ -12,16 +12,17 @@ export class CreateRecipeComponent implements OnInit {
   newIngredient: any;
   newStep: any;
   
-  stepnum: number = 1;
+  stepnum: number;
 
   constructor(private recipeService: RecipeService) { }
 
   ngOnInit() {
+    this.stepnum = 1;
     this.newRecipe = {
       name: "",
       description: "",
-      ingredients: [this.newIngredient],
-      steps: [this.newStep]
+      ingredients: [],
+      steps: []
     }
     this.newIngredient = {
       name: "",
@@ -34,8 +35,9 @@ export class CreateRecipeComponent implements OnInit {
     }
   }
 
-  createRecipeFromService(newRecipe){
-    let observable = this.recipeService.createRecipe(newRecipe)
+  createRecipeFromService(){
+    console.log(this.newRecipe)
+    let observable = this.recipeService.createRecipe(this.newRecipe)
     observable.subscribe(recipe => {
       this.newRecipe = recipe
     })
@@ -46,14 +48,16 @@ export class CreateRecipeComponent implements OnInit {
       ingredients: [],
       steps: []
     }
+
   }
 
   createIngredient(newIngredient){
-    console.log("creating ingredient")
     this.newIngredient = newIngredient
-    console.log(this.newIngredient)
-    console.log(this.newRecipe.ingredients.push(newIngredient))
-    
+    let ingredientList = document.getElementById("ingredientsTable")
+    let newRow = document.createElement("tr")
+    newRow.innerHTML = `<td matt-cell>${newIngredient.amount}</td><td matt-cell> ${newIngredient.measurement}</td><td matt-cell> ${newIngredient.name}</td>`
+    ingredientList.appendChild(newRow)
+    this.newRecipe.ingredients.push(newIngredient)
   }
 
   createStep(newStep){
@@ -61,6 +65,11 @@ export class CreateRecipeComponent implements OnInit {
       stepNo: this.stepnum,
       inst: newStep.inst
     }
+    let stepList = document.getElementById("stepsTable")
+    let newRow = document.createElement("tr")
+    newRow.innerHTML = `<td matt-cell>${this.stepnum}</td><td matt-cell> ${newStep.inst}</td>`
+    stepList.appendChild(newRow)
+    this.newRecipe.steps.push(newStep)
     console.log(this.stepnum);
     this.stepnum++;
   }
