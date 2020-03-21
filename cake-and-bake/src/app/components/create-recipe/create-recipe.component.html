@@ -1,27 +1,28 @@
 <div class="wrapper">
     <h1>Create a new recipe</h1>
     <div class="row">
-        <form class="example-form" (submit)="createRecipe">
+        <form class="example-form" (submit)="createRecipeFromService()">
+            <p>{{ newRecipe | json }}</p>
             <mat-form-field class="example-full-width">
                 <mat-label>Name</mat-label>
                 <input matInput name="name" [(ngModel)]="newRecipe.name" placeholder="Ex. Pizza">
             </mat-form-field>
             <mat-form-field class="example-full-width">
                 <mat-label>Desciption</mat-label>
-                <textarea matInput [(ngModel)]="newRecipe.description" name="description" placeholder="Ex. Dice the tomatoes..."></textarea>
+                <textarea matInput [(ngModel)]="newRecipe.description" name="description" placeholder="Ex. Savory chicken dish served with rice..."></textarea>
             </mat-form-field>
             <br>
             <button mat-raised-button>Add recipe</button>
         </form>
         
-        <form class="example-form" (submit)="createIngredient">
+        <form class="example-form" (submit)="createIngredient(newIngredient)">
             <mat-form-field class="example-full-width">
                 <mat-label>Ingredient</mat-label>
                 <input matInput [(ngModel)]="newIngredient.name" name="ingr-name" placeholder="Ex. Pizza">
             </mat-form-field>
             <mat-form-field class="example-full-width">
                 <mat-label>Amount</mat-label>
-                <input matInput [(ngModel)]="newIngredient.amount" name="ingr-amount" placeholder="Ex. Pizza">
+                <input matInput [(ngModel)]="newIngredient.amount" name="ingr-amount" type="number" step="0.01">
             </mat-form-field>
             <mat-form-field>
                 <mat-label>Unit of measurement</mat-label>
@@ -41,8 +42,9 @@
             <br>
             <button mat-raised-button>Add ingredient</button>
         </form>
+        <table mat-table id="ingredientsTable"  class="mat-elevation-z8"></table>
 
-        <form class="example-form" (submit)="createStep">
+        <form class="example-form" (submit)="createStep(newStep)">
             <mat-form-field class="example-full-width">
                 <mat-label>Add a step</mat-label>
                 <textarea matInput [(ngModel)]="newStep.inst" name="step-name" placeholder="Ex. Dice the tomatoes..."></textarea>
@@ -50,14 +52,37 @@
             <br>
             <button mat-raised-button>Add step</button>
         </form>
-
-        <ol id="myUL">
-            <li>Hit the gym</li>
-            <li class="checked">Pay bills</li>
-            <li>Meet George</li>
-            <li>Buy eggs</li>
-            <li>Read a book</li>
-            <li>Organize office</li>
-        </ol>
+        <table mat-table id="stepsTable"  class="mat-elevation-z8"></table>
     </div>
+
+
+
+
+
+
+    <div id="suppliesDiv">
+
+        <h3>Supplies</h3>
+        <ul id=suppliesList>
+            <li id=supply1><input type="text" name="supplyInput1"
+                id="supplyInput1" /></li>
+        </ul>
+        <button id='addSupply'>Add Supply</button>
+        <button id="suppliesNext">Next</button>
+        <button id="suppliesBack">Back</button>
+
+    </div>
+
+    <div id=instDiv>
+
+        <h3>Instructions</h3>
+        <ol id=instList>
+            <li id=inst1><input type="text" name="instInput1"
+                id="instInput1" /></li>
+        </ol>
+        <button id='addInst'>Add Instruction</button>
+        <button id="instNext">Next</button>
+        <button id="instBack">Back</button>
+    </div>
+
 </div>

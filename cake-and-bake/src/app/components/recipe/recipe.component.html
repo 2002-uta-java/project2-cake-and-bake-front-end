@@ -1,8 +1,18 @@
 <main>
     <div class="text">
-        <h1>Blueberry Oatmeal</h1>
+        <h1>{{response.name}}</h1>
+        <h5>{{response.description}}</h5>
         <h5>*** rating</h5>
-        <a class="btn-floating btn-large waves-effect waves-light light-green"><i class="material-icons">thumb_up</i></a>
+        <button mat-icon-button><i class="material-icons">thumb_up</i></button>
+        <p>Ingredients</p>
+        <ul *ngFor="let i of response.ingredients">
+            <li>{{i.amount}} {{i.name}}</li>
+        </ul>
+        <p>Steps</p>
+        <ul *ngFor="let i of response.steps">
+            <li>{{i}}</li>
+        </ul>
     </div>
     <div class="image"></div>
 </main>
+
