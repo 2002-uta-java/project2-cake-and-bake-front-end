@@ -8,12 +8,12 @@
     background-size: cover;
 }
 
-h1 {
-    font-size: 70px;
+.content {
+    text-align: center;
 }
 
-.material-icons {
-    color: grey;
+h1 {
+    font-size: 70px;
 }
 
 .input-field {

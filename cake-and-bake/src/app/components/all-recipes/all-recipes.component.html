@@ -1,12 +1,20 @@
-<div *ngFor="let item of response">
-    <p>Name: {{item.name}}</p> 
-    <p>Description: {{item.description}}</p>
+<div class="wrapper">
+    <h1>All Recipes</h1>
+    <table>
+        <thead>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Rating</th>
+            <th>Total ratings</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of response">
+                <td><a routerLink="[item.id]">{{item.name}}</a></td>
+                <td>{{item.description}}</td>
+                <td>{{item.ratings}}</td>
+                <td>{{item.numRatings}}</td>
+            </tr>
+        </tbody>
+    </table>
 </div>
-<p>Ingredients</p>
-<!-- <ul *ngFor="let i of response.ingredients">
-    <li>{{i.amount}} {{i.name}}</li>
-</ul>
-<p>Steps</p>
-<ul *ngFor="let i of response.steps">
-    <li>{{i}}</li>
-</ul> -->
+
