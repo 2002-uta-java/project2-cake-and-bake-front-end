@@ -26,8 +26,7 @@ export class CreateRecipeComponent implements OnInit {
     }
     this.newIngredient = {
       name: "",
-      amount: null,
-      measurement: ""
+      amount: ""
     }
     this.newStep = {
       stepNo: this.stepnum,
@@ -53,11 +52,20 @@ export class CreateRecipeComponent implements OnInit {
 
   createIngredient(newIngredient){
     this.newIngredient = newIngredient
-    let ingredientList = document.getElementById("ingredientsTable")
-    let newRow = document.createElement("tr")
-    newRow.innerHTML = `<td matt-cell>${newIngredient.amount}</td><td matt-cell> ${newIngredient.measurement}</td><td matt-cell> ${newIngredient.name}</td>`
+    let ingredientList = document.getElementById("ingredientsList")
+    let newRow = document.createElement("li")
+    newRow.innerHTML = `<li>${newIngredient.amount} ${newIngredient.name}</li>`
+    newRow.style.listStyleType = "none";
+    newRow.style.boxShadow = "3px 3px 5px grey";
+    newRow.style.marginBottom = "5px";
     ingredientList.appendChild(newRow)
     this.newRecipe.ingredients.push(newIngredient)
+
+    // clear all input fields after each addition
+    this.newIngredient = {
+      name: "",
+      amount: ""
+    }
   }
 
   createStep(newStep){
@@ -65,13 +73,23 @@ export class CreateRecipeComponent implements OnInit {
       stepNo: this.stepnum,
       inst: newStep.inst
     }
-    let stepList = document.getElementById("stepsTable")
-    let newRow = document.createElement("tr")
-    newRow.innerHTML = `<td matt-cell>${this.stepnum}</td><td matt-cell> ${newStep.inst}</td>`
+    let stepList = document.getElementById("stepsList")
+    let newRow = document.createElement("li")
+    newRow.innerHTML = `<li>Step ${this.stepnum} - ${newStep.inst}</li>`
+    newRow.style.listStyleType = "none";
+    newRow.style.boxShadow = "3px 3px 5px grey";
+    newRow.style.marginBottom = "5px";
     stepList.appendChild(newRow)
     this.newRecipe.steps.push(newStep)
     console.log(this.stepnum);
     this.stepnum++;
+
+    // clear all input fields after each addition
+    this.newStep = {
+      stepNo: this.stepnum,
+      inst: ""
+    }
   }
+
 
 }

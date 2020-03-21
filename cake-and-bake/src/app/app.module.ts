@@ -15,7 +15,7 @@ import { CreateRecipeComponent } from './components/create-recipe/create-recipe.
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatAutocompleteModule, MatButtonModule, MatCheckboxModule, MatDatepickerModule, 
   MatFormFieldModule, MatInputModule, MatRadioModule, MatSelectModule, MatSliderModule, 
-  MatSlideToggleModule, MatListModule, MatToolbarModule, MatIconModule} from '@angular/material';
+  MatSlideToggleModule, MatListModule, MatToolbarModule, MatIconModule, MatTableModule} from '@angular/material';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { AllRecipesComponent } from './components/all-recipes/all-recipes.component';
 
@@ -51,7 +51,8 @@ import { AllRecipesComponent } from './components/all-recipes/all-recipes.compon
     MatSidenavModule,
     MatToolbarModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

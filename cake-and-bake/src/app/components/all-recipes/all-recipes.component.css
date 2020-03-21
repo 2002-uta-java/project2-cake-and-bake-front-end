@@ -1,0 +1,23 @@
+.wrapper {
+    width: 60vw;
+    margin: 30px auto;
+}
+
+h1 {
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    text-align: center;
+    box-shadow: 5px 5px 10px grey;
+}
+
+th {
+    width: 25%;
+}
+
+tr, tbody {
+    border-bottom-color: grey !important;
+}
+
