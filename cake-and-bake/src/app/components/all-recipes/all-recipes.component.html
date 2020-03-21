@@ -1,6 +1,7 @@
-<p>all-recipes works!</p>
-<p>Name: {{response.name}}</p>
-<p>Description: {{response.description}}</p>
+<div *ngFor="let item of response">
+    <p>Name: {{item.name}}</p> 
+    <p>Description: {{item.description}}</p>
+</div>
 <p>Ingredients</p>
 <!-- <ul *ngFor="let i of response.ingredients">
     <li>{{i.amount}} {{i.name}}</li>
