@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RecipeService } from 'src/app/recipe.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-recipe',
@@ -14,7 +15,7 @@ export class CreateRecipeComponent implements OnInit {
   
   stepnum: number;
 
-  constructor(private recipeService: RecipeService) { }
+  constructor(private recipeService: RecipeService, private _router: Router) { }
 
   ngOnInit() {
     this.stepnum = 1;
@@ -47,6 +48,7 @@ export class CreateRecipeComponent implements OnInit {
       ingredients: [],
       steps: []
     }
+    this._router.navigate(['/'])
 
   }
 

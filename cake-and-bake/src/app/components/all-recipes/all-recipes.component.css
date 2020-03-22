@@ -1,6 +1,14 @@
+main {
+    background-image: linear-gradient(to right bottom, rgba(179, 179, 179, 0.5), rgba(255, 255, 255, 0.5)),url(../../../assets/images/login.jpg);
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
 .wrapper {
     width: 60vw;
-    margin: 30px auto;
+    padding: 30px;
 }
 
 h1 {
@@ -8,6 +16,7 @@ h1 {
 }
 
 table {
+    background-color: white;
     width: 100%;
     text-align: center;
     box-shadow: 5px 5px 10px grey;
@@ -17,7 +26,8 @@ th {
     width: 25%;
 }
 
-tr, tbody {
-    border-bottom-color: grey !important;
+tr {
+    margin-bottom: 30px;
 }
+
 

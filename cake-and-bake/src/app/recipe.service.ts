@@ -7,12 +7,16 @@ import { UtilService } from './util.service';
 })
 
 export class RecipeService {
-  private recipeById = "/recipe"
-  private allRecipes = "/recipes"
+  private recipeById = "/recipe/"
+  private allRecipes = "/recipes/"
 
   constructor(
     private http: HttpClient,
     private util: UtilService) { }
+
+  getRecipeById(id){
+    return this.http.get(this.util.baseUrl + this.allRecipes + 'full/' + id)
+  }
 
   createRecipe(newRecipe){
     console.log("service: " + newRecipe)
