@@ -1,0 +1,23 @@
+<main>
+
+    <div class="wrapper">
+        <h1>All Recipes</h1>
+        <table>
+            <thead>
+                <th id="name">Name</th>
+                <th id="description">Description</th>
+                <th id="rating">Rating</th>
+                <th id="numRatings">Total ratings</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of response">
+                    <td><a [routerLink]="[item.id]">{{item.name}}</a></td>
+                    <td>{{item.description}}</td>
+                    <td>{{item.ratings}}</td>
+                    <td>{{item.numRatings}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</main>
+

@@ -1,0 +1,42 @@
+main {
+    background-image: linear-gradient(to right bottom, rgba(179, 179, 179, 0.5), rgba(255, 255, 255, 0.5)),url(../../../assets/images/login.jpg);
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.wrapper {
+    margin: 30px auto;
+    text-align: center;
+}
+
+.example-form {
+    width: 80%;
+    margin: 10px auto;
+}
+
+.example-full-width {
+    width: 100%;
+}
+
+li {
+    list-style-type: none;
+    box-shadow: 2px 2px 5px grey;
+}
+
+.row {
+    display: flex;
+}
+
+.main-form {
+    text-align: center;
+    background-color: white;
+    padding: 30px;
+    box-shadow: 2px 2px 5px grey;
+
+}
+
+#final-button {
+    background-color: rgb(148, 216, 103);
+}

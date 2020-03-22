@@ -1,19 +1,14 @@
-<ul id="dropdown1" class="dropdown-content">
-    <li><a href="#!">one</a></li>
-    <li><a href="#!">two</a></li>
-    <li class="divider"></li>
-    <li><a href="#!">three</a></li>
-</ul>
-<nav>
-    <div class="nav-wrapper grey lighten-5">
-        <!-- <a href="#" class="brand-logo right">Logo</a> -->
-        <ul id="nav-mobile" class="left hide-on-med-and-down">
-            <li><a href="#" class="logo">Cake&Bake</a></li>
-            <li><a href="sass.html">Recipes</a></li>
-            <li><a href="badges.html">Categories</a></li>
-        </ul>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
-        </ul>
-    </div>
-</nav>
+<mat-toolbar>
+    <mat-toolbar-row>
+        <button mat-icon-button>
+            <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+        </button>
+        <a mat-button [routerLink]="'/'"><h1>Cake&Bake </h1> </a>
+        <span class="menu-spacer"></span>
+        <div>
+            <a mat-button [routerLink]="'/recipes'"> Recipes </a>
+            <a mat-button [routerLink]="'/categories'"> Categories </a>
+            <a mat-button [routerLink]="'/recipe/new'"> Create a Recipe </a>
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar>

@@ -6,11 +6,17 @@ main {
 
 .image {
     width: 400px;
-    min-height: 400px;
+    max-height: 400px;
     border-radius: 50%;
     box-shadow: 3px 3px 10px grey;
     background-image: url(../../../assets/images/food-bright.jpg);
     background-size: cover;
 }
+
+li {
+    list-style-type: none;
+}
+
+
 
 

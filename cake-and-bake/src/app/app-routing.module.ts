@@ -5,6 +5,8 @@ import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { MainComponent } from './components/main/main.component';
 import { RecipeComponent } from './components/recipe/recipe.component';
+import { CreateRecipeComponent } from './components/create-recipe/create-recipe.component';
+import { AllRecipesComponent } from './components/all-recipes/all-recipes.component';
 
 
 const routes: Routes = [{
@@ -14,8 +16,14 @@ const routes: Routes = [{
     path: '',
     component: HomeComponent
   },{
-    path: 'recipe/id',
+    path: 'recipes',
+    component: AllRecipesComponent
+  },{
+    path: 'recipes/:id',
     component: RecipeComponent
+  }, {
+    path: 'recipe/new',
+    component: CreateRecipeComponent
   }]
 },{
   path: 'login',
