@@ -1,16 +1,16 @@
 <main>
     <div class="text">
-        <h1>{{response.name}}</h1>
-        <h5>{{response.description}}</h5>
+        <h1>{{recipe.name}}</h1>
+        <h5>{{recipe.description}}</h5>
         <h5>*** rating</h5>
         <button mat-icon-button><i class="material-icons">thumb_up</i></button>
         <p>Ingredients</p>
-        <ul *ngFor="let i of response.ingredients">
+        <ul *ngFor="let i of recipe.ingredients">
             <li>{{i.amount}} {{i.name}}</li>
         </ul>
         <p>Steps</p>
-        <ul *ngFor="let i of response.steps">
-            <li>{{i}}</li>
+        <ul *ngFor="let step of recipe.steps; let i = index">
+            <li>{{i + 1}}. {{step}}</li>
         </ul>
     </div>
     <div class="image"></div>

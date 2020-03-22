@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { RecipeService } from 'src/app/recipe.service';
+import { ActivatedRoute, Router, Params } from '@angular/router';
 
 @Component({
   selector: 'app-recipe',
@@ -8,16 +10,22 @@ import { HttpClient } from '@angular/common/http';
 })
 export class RecipeComponent implements OnInit {
 
-  response: any;
-  constructor(private http: HttpClient) { }
+  recipe: any;
+  constructor(private recipeService: RecipeService, private http: HttpClient, private _router: Router,
+    private _route: ActivatedRoute) { }
 
   ngOnInit() {
-    const response = this.http.get("http://3.14.28.165/cake-and-bake/recipes/full/3");
-    console.log("showing response");
-    response.subscribe(response => {
-      console.log(response)
-      this.response = response;
-    });
+
+    //check image url if null no pic, if not null, populate it with the picUrl
+
+    this._route.params
+      .subscribe((params: Params) => {
+        this.recipeService.getRecipeById(params.id)
+          .subscribe((data: any) => {
+            this.recipe = data
+            console.log(this.recipe)
+          })
+      })
   }
 
 }

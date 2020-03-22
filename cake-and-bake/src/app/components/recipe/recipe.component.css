@@ -13,4 +13,10 @@ main {
     background-size: cover;
 }
 
+li {
+    list-style-type: none;
+}
+
+
+
 
