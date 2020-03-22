@@ -48,7 +48,7 @@ export class CreateRecipeComponent implements OnInit {
       ingredients: [],
       steps: []
     }
-    this._router.navigate(['/'])
+    this._router.navigate(['/recipes'])
 
   }
 
