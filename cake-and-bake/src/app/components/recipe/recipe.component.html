@@ -2,7 +2,8 @@
     <div class="text">
         <h1>{{recipe.name}}</h1>
         <h5>{{recipe.description}}</h5>
-        <h5>*** rating</h5>
+        <h5 *ngIf="response.numRatings != 0 && response.numRatings != null">Rating: {{response.ratings / response.numRatings}}/5</h5>
+        <h5 *ngIf="response.numRatings == 0 || response.numRatings == null">No ratings yet</h5>
         <button mat-icon-button><i class="material-icons">thumb_up</i></button>
         <p>Ingredients</p>
         <ul *ngFor="let i of recipe.ingredients">

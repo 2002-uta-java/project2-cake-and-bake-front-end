@@ -20,7 +20,7 @@ export class RecipeService {
 
   createRecipe(newRecipe){
     console.log("service: " + newRecipe)
-    return this.http.post(this.util.baseUrl + this.recipeById, newRecipe);
+    return this.http.post(this.util.baseUrl + this.allRecipes, newRecipe);
   }
 
   getAllRecipes(){

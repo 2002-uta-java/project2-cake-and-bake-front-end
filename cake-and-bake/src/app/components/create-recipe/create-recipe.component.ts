@@ -35,9 +35,26 @@ export class CreateRecipeComponent implements OnInit {
     }
   }
 
+  translateRecipe(recipe){
+    const newRecipe = {};
+    newRecipe["name"] = recipe.name;
+    newRecipe["description"] = recipe.description;
+    newRecipe["ingredients"] = recipe.ingredients;
+    newRecipe["ratings"] = recipe.ratings;
+    newRecipe["numRatings"] = recipe.numRatings;
+    const steps = [];
+    for (let step of recipe.steps){
+      steps.push(step.inst)
+    }
+    newRecipe["steps"] = steps;
+    return newRecipe;
+  }
+
   createRecipeFromService(){
     console.log(this.newRecipe)
-    let observable = this.recipeService.createRecipe(this.newRecipe)
+    const recipejs = this.translateRecipe(this.newRecipe);
+    console.log(recipejs);
+    let observable = this.recipeService.createRecipe(recipejs);
     observable.subscribe(recipe => {
       this.newRecipe = recipe
     })
